@@ -64,6 +64,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CrmRepository.cs" />
+    <Compile Include="Repository\Customer\Database.cs" />
+    <Compile Include="Repository\Customer\ICrmDatabase.cs" />
     <Compile Include="Repository\Database\Database.cs" />
     <Compile Include="Repository\Database\ICrmDatabase.cs" />
     <Compile Include="Repository\interface\IRepository.cs" />

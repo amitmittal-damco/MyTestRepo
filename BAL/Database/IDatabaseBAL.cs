@@ -9,6 +9,6 @@ namespace BAL.Database
         void AddDatabase(params Databas[] databases);
         void UpdateDatabase(params Databas[] databases);
         void RemoveDatabase(params Databas[] databases);
-        IList<Customer> GetCustomerByDatabaseName(string databaseName);
+        IList<Customer> GetCustomerByCustomerId(string databaseName);
     }
 }
