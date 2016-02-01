@@ -1,53 +1,166 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>ed0e080b-9151-4882-92d9-430c65c7dcc1</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>CrmDomain</RootNamespace>
-		<AssemblyName>CrmDomain</AssemblyName>
-		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-		<FileAlignment>512</FileAlignment>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>pdbonly</DebugType>
- 		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System"/>
-		
-		<Reference Include="System.Core"/>
-		<Reference Include="System.Xml.Linq"/>
-		<Reference Include="System.Data.DataSetExtensions"/>
-		
-		
-		<Reference Include="Microsoft.CSharp"/>
- 		
-		<Reference Include="System.Data"/>
-		<Reference Include="System.Xml"/>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Class1.cs" />
-
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46863B04-6E5A-4219-AE22-6C8ED96AAA18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrmDomain</RootNamespace>
+    <AssemblyName>CrmDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountDB.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASPeLog.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASPevent.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="auditMyTran.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="auditOutbox.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auth.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPO.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPOEvent.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPOTemp.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CribAccess.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CriticalBin.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CriticalBinEvent.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CrmModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurOnHandBurn.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Databas.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBOevent.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentNumber.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAuth.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGroup.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGroupAccount.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPermission.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPermissionType.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Server.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Station.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncTable.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCriticalBin.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCriticalBin2.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempReport.cs">
+      <DependentUpon>CrmModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CrmModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CrmModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -55,5 +168,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

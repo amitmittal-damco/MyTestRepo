@@ -10,7 +10,7 @@ namespace BAL.Database
     {
         public IList<CrmDomain.Databas> GetAllDatabase()
         {
-            throw new NotImplementedException();
+            
         }
 
         public CrmDomain.Databas GetDatabaseByName(string value)

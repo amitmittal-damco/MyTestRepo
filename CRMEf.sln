@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMEf", "CRMEf\CRMEf.csproj", "{91A37135-286F-4D2C-9050-2A1D3D6119FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmDomain", "CrmDomain\CrmDomain.csproj", "{46863B04-6E5A-4219-AE22-6C8ED96AAA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{91A37135-286F-4D2C-9050-2A1D3D6119FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A37135-286F-4D2C-9050-2A1D3D6119FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A37135-286F-4D2C-9050-2A1D3D6119FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46863B04-6E5A-4219-AE22-6C8ED96AAA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46863B04-6E5A-4219-AE22-6C8ED96AAA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46863B04-6E5A-4219-AE22-6C8ED96AAA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46863B04-6E5A-4219-AE22-6C8ED96AAA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
