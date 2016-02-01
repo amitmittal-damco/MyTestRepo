@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BAL</RootNamespace>
-    <AssemblyName>BAL</AssemblyName>
+    <RootNamespace>ConsoleClient</RootNamespace>
+    <AssemblyName>ConsoleClient</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,23 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\DatabaseBal.cs" />
-    <Compile Include="Database\IDatabaseBAL.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CrmDomain\CrmDomain.csproj">
-      <Project>{46863b04-6e5a-4219-ae22-6c8ed96aaa18}</Project>
-      <Name>CrmDomain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CRMEf\CRMEf.csproj">
-      <Project>{91a37135-286f-4d2c-9050-2a1d3d6119fa}</Project>
-      <Name>CRMEf</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{d99a229d-6d73-45f7-aaca-9b5f771e2d5b}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrmDomain\CrmDomain.csproj">
+      <Project>{46863b04-6e5a-4219-ae22-6c8ed96aaa18}</Project>
+      <Name>CrmDomain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

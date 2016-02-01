@@ -64,7 +64,7 @@ namespace CRMEf.Repository
             {
                 foreach (T item in items)
                 {
-                    context.Entry(item).State = EntityState.Added;
+                    ;context.Entry(item).State = EntityState.Added;
                 }
                 context.SaveChanges();
             }

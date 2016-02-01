@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmDomain", "CrmDomain\CrmD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D99A229D-6D73-45F7-AACA-9B5F771E2D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FAD5BA-056D-4B86-A9AD-32064CA6D16D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
