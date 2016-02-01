@@ -1,0 +1,2146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutoCribCRM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountDBs">
+          <Key>
+            <PropertyRef Name="AccountID" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HostedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ClientID" Type="varchar" MaxLength="50" />
+          <Property Name="AccountType" Type="smallint" Nullable="false" />
+          <Property Name="VendorID" Type="varchar" MaxLength="20" />
+          <Property Name="FolderPath" Type="varchar" MaxLength="255" />
+          <Property Name="Company" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="25" />
+          <Property Name="SecureLevel" Type="char" MaxLength="1" />
+          <Property Name="Licensed" Type="int" />
+          <Property Name="Active" Type="int" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="20" />
+          <Property Name="Zip" Type="varchar" MaxLength="20" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email2" Type="varchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="Memo" Type="varchar" MaxLength="255" />
+          <Property Name="Logo" Type="varchar" MaxLength="50" />
+          <Property Name="WebsiteURL" Type="varchar" MaxLength="1000" />
+          <Property Name="CCNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CCType" Type="varchar" MaxLength="50" />
+          <Property Name="CCExpMonth" Type="char" MaxLength="2" />
+          <Property Name="CCExpDay" Type="char" MaxLength="2" />
+          <Property Name="CCExpYear" Type="char" MaxLength="4" />
+          <Property Name="NameOnCard" Type="varchar" MaxLength="50" />
+          <Property Name="BillingAddress" Type="varchar" MaxLength="50" />
+          <Property Name="BillingCity" Type="varchar" MaxLength="50" />
+          <Property Name="BillingState" Type="varchar" MaxLength="50" />
+          <Property Name="BillingZip" Type="varchar" MaxLength="15" />
+          <Property Name="BillingCountry" Type="varchar" MaxLength="100" />
+          <Property Name="PasswordHintQuestion" Type="varchar" MaxLength="100" />
+          <Property Name="PasswordHint" Type="varchar" MaxLength="50" />
+          <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="LastChangeDate" Type="datetime" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="UseAutoCribClient" Type="bit" />
+          <Property Name="SupportBeginDate" Type="datetime" />
+          <Property Name="SupportEndDate" Type="datetime" />
+          <Property Name="Subscription" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="NumOfMachines" Type="int" />
+          <Property Name="AmountPaid" Type="money" />
+          <Property Name="BeginDate" Type="datetime" />
+          <Property Name="ExpireDate" Type="datetime" />
+          <Property Name="Dashboard" Type="bit" Nullable="false" />
+          <Property Name="GroupId" Type="nchar" MaxLength="10" />
+          <Property Name="IntelliviewPassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="IntelliviewAdmin" Type="bit" />
+          <Property Name="RestrictedAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ASPeLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" />
+          <Property Name="EventID" Type="int" />
+          <Property Name="EventName" Type="varchar" MaxLength="4000" />
+          <Property Name="RunBy" Type="varchar" MaxLength="50" />
+          <Property Name="ThisRunDate" Type="datetime" />
+          <Property Name="NextRunDate" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="StatusInfo" Type="varchar" MaxLength="255" />
+          <Property Name="Data" Type="text" />
+        </EntityType>
+        <EntityType Name="ASPevents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="ReportID" Type="int" />
+          <Property Name="MyGroup" Type="varchar" MaxLength="1000" />
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="EventDesc" Type="varchar" MaxLength="255" />
+          <Property Name="isOn" Type="int" />
+          <Property Name="Freq" Type="int" />
+          <Property Name="Every" Type="int" />
+          <Property Name="NextRunOn" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="DeleteEvent" Type="int" />
+          <Property Name="NotifyAddr" Type="varchar" MaxLength="255" />
+          <Property Name="NotifySubject" Type="varchar" MaxLength="255" />
+          <Property Name="EXE" Type="int" />
+          <Property Name="ExeExitTime" Type="int" />
+          <Property Name="WebPageURL" Type="varchar" MaxLength="255" />
+          <Property Name="Sun" Type="int" />
+          <Property Name="Mon" Type="int" />
+          <Property Name="Tue" Type="int" />
+          <Property Name="Wed" Type="int" />
+          <Property Name="Thr" Type="int" />
+          <Property Name="Fri" Type="int" />
+          <Property Name="Sat" Type="int" />
+          <Property Name="LastRunStatus" Type="varchar" MaxLength="255" />
+          <Property Name="SuccRuns" Type="int" />
+          <Property Name="FailedRuns" Type="int" />
+          <Property Name="TimeOffSet" Type="int" />
+          <Property Name="Daily" Type="bit" Nullable="false" />
+          <Property Name="Weekly" Type="bit" Nullable="false" />
+          <Property Name="Monthly" Type="bit" Nullable="false" />
+          <Property Name="SelectDay" Type="bit" Nullable="false" />
+          <Property Name="PrintTime" Type="datetime" />
+          <Property Name="DayofWeek" Type="int" />
+          <Property Name="DayofMonth" Type="int" />
+          <Property Name="TimeZone" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="auditMyTran">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbName" Type="varchar" MaxLength="255" />
+          <Property Name="AuditType" Type="varchar" MaxLength="50" />
+          <Property Name="MyTranRecID" Type="int" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Station" Type="varchar" MaxLength="50" />
+          <Property Name="Bin" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Emp" Type="varchar" MaxLength="255" />
+          <Property Name="BurnQty" Type="int" Nullable="false" />
+          <Property Name="CurOnHand" Type="int" Nullable="false" />
+          <Property Name="CurBurn" Type="int" Nullable="false" />
+          <Property Name="CurOnHand2" Type="int" Nullable="false" />
+          <Property Name="CurBurn2" Type="int" Nullable="false" />
+          <Property Name="AdjQty" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="auditOutbox">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbName" Type="varchar" MaxLength="255" />
+          <Property Name="AuditType" Type="varchar" MaxLength="50" />
+          <Property Name="OutboxRecID" Type="int" />
+          <Property Name="ID" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="varchar" MaxLength="100" />
+          <Property Name="TableName" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="char" MaxLength="1" />
+          <Property Name="Key1" Type="varchar" MaxLength="50" />
+          <Property Name="Key2" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="ComputerName" Type="varchar" MaxLength="100" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AutoCribCRM_Schema_V2.dbo.Auth' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="Guid" />
+            <PropertyRef Name="GuidDate" />
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="Guid" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="GuidDate" Type="datetime" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AutoPO">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="DbName" Type="varchar" MaxLength="50" />
+          <Property Name="Vendor" Type="varchar" MaxLength="50" />
+          <Property Name="POTime" Type="datetime" />
+          <Property Name="GeneratePO" Type="bit" />
+          <Property Name="GenerateRoboPO" Type="bit" />
+          <Property Name="ExportPO" Type="bit" />
+          <Property Name="PoNo" Type="varchar" MaxLength="50" />
+          <Property Name="ErrorMessage" Type="varchar" MaxLength="5000" />
+          <Property Name="POSent" Type="bit" />
+          <Property Name="EmailOn" Type="bit" />
+          <Property Name="Crib" Type="varchar" MaxLength="50" />
+          <Property Name="cXML" Type="bit" />
+          <Property Name="cXMLSent" Type="bit" />
+          <Property Name="cXMLCreated" Type="bit" />
+          <Property Name="EventID" Type="int" />
+          <Property Name="Run" Type="bit" />
+          <Property Name="Approval" Type="bit" />
+        </EntityType>
+        <EntityType Name="AutoPOEvents">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbId" Type="int" />
+          <Property Name="Vendor" Type="varchar" MaxLength="50" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Run" Type="bit" />
+          <Property Name="Crib" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AutoCribCRM_Schema_V2.dbo.AutoPOTemp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AutoPOTemp">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" Nullable="false" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="Crib" Type="varchar" MaxLength="50" />
+          <Property Name="Vendor" Type="varchar" MaxLength="50" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Run" Type="bit" />
+          <Property Name="DbName" Type="varchar" MaxLength="50" />
+          <Property Name="MyDateP" Type="datetime" />
+          <Property Name="MyTimeP" Type="datetime" />
+          <Property Name="DbNameP" Type="varchar" MaxLength="50" />
+          <Property Name="CribP" Type="varchar" MaxLength="50" />
+          <Property Name="VendorP" Type="varchar" MaxLength="50" />
+          <Property Name="POTime" Type="datetime" />
+          <Property Name="GeneratePO" Type="bit" />
+          <Property Name="GenerateRoboPO" Type="bit" />
+          <Property Name="ExportPO" Type="bit" />
+          <Property Name="PoNo" Type="varchar" MaxLength="50" />
+          <Property Name="ErrorMessage" Type="varchar" MaxLength="5000" />
+          <Property Name="POSent" Type="bit" />
+          <Property Name="EmailOn" Type="bit" />
+          <Property Name="cXML" Type="bit" />
+          <Property Name="CXMLSent" Type="bit" />
+          <Property Name="cXMLCreated" Type="bit" />
+          <Property Name="EventID" Type="int" />
+          <Property Name="RunP" Type="bit" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CribAccess">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="StationID" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriticalBinEvents">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="Station" Type="varchar" MaxLength="50" />
+          <Property Name="MyNo" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Description1" Type="varchar" MaxLength="35" />
+          <Property Name="PackQty" Type="int" />
+          <Property Name="OrderQty" Type="int" />
+          <Property Name="ExtendedQty" Type="int" />
+          <Property Name="Vendor" Type="varchar" MaxLength="500" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="DatabaseName" Type="varchar" MaxLength="500" />
+          <Property Name="Company" Type="varchar" MaxLength="500" />
+          <Property Name="Processed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriticalBins">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="Data" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="CurOnHandBurn">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" />
+          <Property Name="TranNo" Type="int" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Station" Type="varchar" MaxLength="50" />
+          <Property Name="Bin" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Emp" Type="varchar" MaxLength="50" />
+          <Property Name="CurOnHand" Type="int" />
+          <Property Name="CurOnHand2" Type="int" />
+          <Property Name="CurBurn" Type="int" />
+          <Property Name="CurBurn2" Type="int" />
+          <Property Name="DbName" Type="varchar" MaxLength="50" />
+          <Property Name="LastRunTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Alpha2Code" Type="nvarchar" MaxLength="2" />
+          <Property Name="CurrencyCodeA" Type="nvarchar" MaxLength="3" />
+          <Property Name="CurrencyCodeN" Type="nvarchar" MaxLength="3" />
+          <Property Name="MinorUnit" Type="int" />
+          <Property Name="CurrencyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountID" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="Company" Type="varchar" MaxLength="50" />
+          <Property Name="MultiSearch" Type="bit" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Databases">
+          <Key>
+            <PropertyRef Name="DbID" />
+          </Key>
+          <Property Name="DbID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="AccountID" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
+          <Property Name="DsnName" Type="varchar" MaxLength="50" />
+          <Property Name="DbSchema" Type="varchar" MaxLength="12" />
+          <Property Name="DbName" Type="varchar" MaxLength="50" />
+          <Property Name="DbLogin" Type="varchar" MaxLength="100" />
+          <Property Name="DbPassword" Type="varchar" MaxLength="20" />
+          <Property Name="AutoPO" Type="bit" />
+          <Property Name="Live" Type="bit" />
+          <Property Name="Notify" Type="bit" />
+          <Property Name="Monitor" Type="bit" />
+          <Property Name="NumOfCribs" Type="int" />
+          <Property Name="LastMonthNumOfCribs" Type="int" />
+          <Property Name="FirstTransaction" Type="datetime" />
+          <Property Name="UseMasterItem" Type="bit" />
+          <Property Name="LocalDBType" Type="bit" />
+          <Property Name="LocalVersion" Type="varchar" MaxLength="25" />
+          <Property Name="AllowDomainName" Type="bit" />
+          <Property Name="MultiSync" Type="bit" />
+          <Property Name="LCID" Type="int" />
+          <Property Name="AppName" Type="varchar" MaxLength="50" />
+          <Property Name="AppVersion" Type="varchar" MaxLength="15" />
+          <Property Name="OwnedBy" Type="bit" />
+          <Property Name="UseCustomPOReport" Type="bit" />
+          <Property Name="CustomerFolderPath" Type="varchar" MaxLength="500" />
+          <Property Name="ASPSyncStatus" Type="varchar" MaxLength="10" />
+          <Property Name="AutoPollStatus" Type="varchar" MaxLength="10" />
+          <Property Name="LastSyncTime" Type="datetime" />
+          <Property Name="SalesOrderNumber" Type="varchar" MaxLength="50" />
+          <Property Name="UseBackgroundImage" Type="bit" />
+          <Property Name="UseCustomedImages" Type="bit" />
+          <Property Name="HeaderTextColor" Type="varchar" MaxLength="7" />
+          <Property Name="SearchHighlightColor" Type="varchar" MaxLength="7" />
+          <Property Name="CurrentSize" Type="real" />
+          <Property Name="MaximumSize" Type="real" />
+          <Property Name="RemoteType" Type="varchar" MaxLength="50" />
+          <Property Name="RemoteIP" Type="varchar" MaxLength="15" />
+          <Property Name="RemoteLogin" Type="varchar" MaxLength="30" />
+          <Property Name="RemotePassword" Type="varchar" MaxLength="30" />
+          <Property Name="RemotePath" Type="varchar" MaxLength="500" />
+          <Property Name="Notes" Type="varchar" MaxLength="8000" />
+          <Property Name="Setup_Company" Type="bit" />
+          <Property Name="Setup_Defaults" Type="bit" />
+          <Property Name="Setup_Connection" Type="bit" />
+          <Property Name="Setup_Locations" Type="bit" />
+          <Property Name="Setup_Controller" Type="bit" />
+          <Property Name="Setup_Terminals" Type="bit" />
+          <Property Name="Setup_Logins" Type="bit" />
+          <Property Name="Setup_Cribs" Type="bit" />
+          <Property Name="Setup_Bins" Type="bit" />
+          <Property Name="Setup_Inventory" Type="bit" />
+          <Property Name="Setup_Databases" Type="bit" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="NewSync" Type="bit" />
+          <Property Name="Webservice" Type="bit" Nullable="false" />
+          <Property Name="BackupOnly" Type="bit" Nullable="false" />
+          <Property Name="MX" Type="bit" Nullable="false" />
+          <Property Name="NumOfBins" Type="int" />
+          <Property Name="LastMonthNumOfBins" Type="int" />
+          <Property Name="WebserviceBeforeSuspend" Type="bit" Nullable="false" />
+          <Property Name="AccountType" Type="int" />
+          <Property Name="BillFrequency" Type="int" />
+          <Property Name="OutboxRecords" Type="int" Nullable="false" />
+          <Property Name="DoNotDelete" Type="bit" Nullable="false" />
+          <Property Name="SharedSecret" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DBOevents">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
+          <Property Name="MyDate" Type="datetime" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Run" Type="bit" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="EquipmentNumbers">
+          <Key>
+            <PropertyRef Name="ParentID" />
+            <PropertyRef Name="EquipmentNo" />
+          </Key>
+          <Property Name="Crib" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="DbID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="EquipmentNo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="fldAuto" />
+          </Key>
+          <Property Name="fldAuto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fldUserID" Type="nvarchar" MaxLength="100" />
+          <Property Name="fldCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="fldDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="fldEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="fldTimeIn" Type="datetime" />
+          <Property Name="fldDate" Type="datetime" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="reportName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="companyId" Type="bigint" />
+          <Property Name="deletedDate" Type="datetime" />
+          <Property Name="deletedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ReportAuth">
+          <Key>
+            <PropertyRef Name="token" />
+          </Key>
+          <Property Name="token" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="createdDate" Type="datetime" Nullable="false" />
+          <Property Name="accountID" Type="int" Nullable="false" />
+          <Property Name="ipAddress" Type="varchar" MaxLength="43" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AutoCribCRM_Schema_V2.dbo.ReportGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReportGroup">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+          <Property Name="companyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportGroupAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountID" Type="bigint" Nullable="false" />
+          <Property Name="groupID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MyTime" Type="datetime" />
+          <Property Name="Company" Type="varchar" MaxLength="1000" />
+          <Property Name="PageURL" Type="varchar" MaxLength="4000" />
+          <Property Name="TranType" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ReportPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="permissionID" Type="int" Nullable="false" />
+          <Property Name="reportID" Type="bigint" Nullable="false" />
+          <Property Name="groupID" Type="bigint" />
+          <Property Name="accountID" Type="bigint" />
+          <Property Name="companyID" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AutoCribCRM_Schema_V2.dbo.ReportPermissionType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReportPermissionType">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="permission" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="permission" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Servers">
+          <Key>
+            <PropertyRef Name="AppName" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RemoteLogin" Type="varchar" MaxLength="50" />
+          <Property Name="RemotePassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="DbID" />
+            <PropertyRef Name="Station" />
+          </Key>
+          <Property Name="DbID" Type="int" Nullable="false" />
+          <Property Name="Station" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="RoboType" Type="varchar" MaxLength="50" />
+          <Property Name="KeyItemCode" Type="varchar" MaxLength="30" />
+          <Property Name="LastIssue" Type="datetime" />
+          <Property Name="NumofBins" Type="int" />
+          <Property Name="LockControl" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'AutoCribCRM_Schema_V2.dbo.Suppliers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Suppliers">
+          <Property Name="AccountID" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AutoCribCRM_Schema_V2.dbo.SyncTables' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SyncTables">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="PrimaryKey" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="50" />
+          <Property Name="ColumnName" Type="varchar" MaxLength="50" />
+          <Property Name="DataType" Type="varchar" MaxLength="50" />
+          <Property Name="DefaultValue" Type="varchar" MaxLength="50" />
+          <Property Name="ConstraintName" Type="varchar" MaxLength="50" />
+          <Property Name="PrimaryKey" Type="bit" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TempCriticalBin">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Station" Type="varchar" MaxLength="50" />
+          <Property Name="MyNo" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Description1" Type="varchar" MaxLength="35" />
+          <Property Name="PackQty" Type="int" />
+          <Property Name="OrderQty" Type="int" />
+          <Property Name="ExtendedQty" Type="int" />
+          <Property Name="Vendor" Type="varchar" MaxLength="500" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="DatabaseName" Type="varchar" MaxLength="500" />
+          <Property Name="Company" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TempCriticalBin2">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbID" Type="int" />
+          <Property Name="DbName" Type="varchar" MaxLength="50" />
+          <Property Name="Company" Type="varchar" MaxLength="255" />
+          <Property Name="DistributorID" Type="int" />
+          <Property Name="AppVersion" Type="varchar" MaxLength="50" />
+          <Property Name="MyDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempReport">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DbName" Type="varchar" MaxLength="500" />
+          <Property Name="AppVersion" Type="varchar" MaxLength="50" />
+          <Property Name="MyGroup" Type="varchar" MaxLength="15" />
+          <Property Name="Description" Type="varchar" MaxLength="45" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="MyDate" Type="bit" Nullable="false" />
+          <Property Name="DateField" Type="varchar" MaxLength="20" />
+          <Property Name="Range1" Type="varchar" MaxLength="15" />
+          <Property Name="Field1" Type="varchar" MaxLength="20" />
+          <Property Name="Size1" Type="int" />
+          <Property Name="Range2" Type="varchar" MaxLength="15" />
+          <Property Name="Field2" Type="varchar" MaxLength="20" />
+          <Property Name="Size2" Type="int" />
+          <Property Name="Batch" Type="bit" Nullable="false" />
+          <Property Name="Daily" Type="bit" Nullable="false" />
+          <Property Name="Weekly" Type="bit" Nullable="false" />
+          <Property Name="Monthly" Type="bit" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="StartRange1" Type="varchar" MaxLength="30" />
+          <Property Name="EndRange1" Type="varchar" MaxLength="30" />
+          <Property Name="StartRange2" Type="varchar" MaxLength="30" />
+          <Property Name="EndRange2" Type="varchar" MaxLength="30" />
+          <Property Name="ToPrint" Type="bit" Nullable="false" />
+          <Property Name="ToEmail" Type="bit" Nullable="false" />
+          <Property Name="ToFile" Type="bit" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="255" />
+          <Property Name="FileName" Type="varchar" MaxLength="200" />
+          <Property Name="AutoGenerateName" Type="bit" Nullable="false" />
+          <Property Name="FileType" Type="varchar" MaxLength="25" />
+          <Property Name="ToFax" Type="bit" />
+          <Property Name="Fax" Type="varchar" MaxLength="255" />
+          <Property Name="AStartDate" Type="datetime" />
+          <Property Name="AEndDate" Type="datetime" />
+          <Property Name="AStartRange1" Type="varchar" MaxLength="255" />
+          <Property Name="AStartRange2" Type="varchar" MaxLength="255" />
+          <Property Name="AEndRange1" Type="varchar" MaxLength="255" />
+          <Property Name="AEndRange2" Type="varchar" MaxLength="255" />
+          <Property Name="PrintTime" Type="datetime" />
+          <Property Name="DayofWeek" Type="int" />
+          <Property Name="DayofMonth" Type="int" />
+          <Property Name="Autobin" Type="bit" />
+          <Property Name="DateRange" Type="int" Nullable="false" />
+          <Property Name="ADateRange" Type="int" Nullable="false" />
+          <Property Name="Processed" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="AutoCribCRMStoreContainer">
+          <EntitySet Name="AccountDBs" EntityType="Self.AccountDBs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ASPeLog" EntityType="Self.ASPeLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ASPevents" EntityType="Self.ASPevents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="auditMyTran" EntityType="Self.auditMyTran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="auditOutbox" EntityType="Self.auditOutbox" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutoPO" EntityType="Self.AutoPO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutoPOEvents" EntityType="Self.AutoPOEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CribAccess" EntityType="Self.CribAccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CriticalBinEvents" EntityType="Self.CriticalBinEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CriticalBins" EntityType="Self.CriticalBins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurOnHandBurn" EntityType="Self.CurOnHandBurn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Databases" EntityType="Self.Databases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DBOevents" EntityType="Self.DBOevents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipmentNumbers" EntityType="Self.EquipmentNumbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportAuth" EntityType="Self.ReportAuth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportGroupAccount" EntityType="Self.ReportGroupAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportLog" EntityType="Self.ReportLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportPermission" EntityType="Self.ReportPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servers" EntityType="Self.Servers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Station" EntityType="Self.Station" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempCriticalBin" EntityType="Self.TempCriticalBin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempCriticalBin2" EntityType="Self.TempCriticalBin2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempReport" EntityType="Self.TempReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Auth" EntityType="Self.Auth" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Auth].[Guid] AS [Guid], 
+    [Auth].[GuidDate] AS [GuidDate], 
+    [Auth].[AccountID] AS [AccountID]
+    FROM [dbo].[Auth] AS [Auth]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AutoPOTemp" EntityType="Self.AutoPOTemp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AutoPOTemp].[RecordID] AS [RecordID], 
+    [AutoPOTemp].[DbID] AS [DbID], 
+    [AutoPOTemp].[Crib] AS [Crib], 
+    [AutoPOTemp].[Vendor] AS [Vendor], 
+    [AutoPOTemp].[MyDate] AS [MyDate], 
+    [AutoPOTemp].[MyTime] AS [MyTime], 
+    [AutoPOTemp].[Run] AS [Run], 
+    [AutoPOTemp].[DbName] AS [DbName], 
+    [AutoPOTemp].[MyDateP] AS [MyDateP], 
+    [AutoPOTemp].[MyTimeP] AS [MyTimeP], 
+    [AutoPOTemp].[DbNameP] AS [DbNameP], 
+    [AutoPOTemp].[CribP] AS [CribP], 
+    [AutoPOTemp].[VendorP] AS [VendorP], 
+    [AutoPOTemp].[POTime] AS [POTime], 
+    [AutoPOTemp].[GeneratePO] AS [GeneratePO], 
+    [AutoPOTemp].[GenerateRoboPO] AS [GenerateRoboPO], 
+    [AutoPOTemp].[ExportPO] AS [ExportPO], 
+    [AutoPOTemp].[PoNo] AS [PoNo], 
+    [AutoPOTemp].[ErrorMessage] AS [ErrorMessage], 
+    [AutoPOTemp].[POSent] AS [POSent], 
+    [AutoPOTemp].[EmailOn] AS [EmailOn], 
+    [AutoPOTemp].[cXML] AS [cXML], 
+    [AutoPOTemp].[CXMLSent] AS [CXMLSent], 
+    [AutoPOTemp].[cXMLCreated] AS [cXMLCreated], 
+    [AutoPOTemp].[EventID] AS [EventID], 
+    [AutoPOTemp].[RunP] AS [RunP]
+    FROM [dbo].[AutoPOTemp] AS [AutoPOTemp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReportGroup" EntityType="Self.ReportGroup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ReportGroup].[id] AS [id], 
+    [ReportGroup].[name] AS [name], 
+    [ReportGroup].[description] AS [description], 
+    [ReportGroup].[companyID] AS [companyID]
+    FROM [dbo].[ReportGroup] AS [ReportGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReportPermissionType" EntityType="Self.ReportPermissionType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ReportPermissionType].[id] AS [id], 
+    [ReportPermissionType].[permission] AS [permission]
+    FROM [dbo].[ReportPermissionType] AS [ReportPermissionType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SyncTables" EntityType="Self.SyncTables" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SyncTables].[RecordID] AS [RecordID], 
+    [SyncTables].[TableName] AS [TableName], 
+    [SyncTables].[ColumnName] AS [ColumnName], 
+    [SyncTables].[DataType] AS [DataType], 
+    [SyncTables].[DefaultValue] AS [DefaultValue], 
+    [SyncTables].[ConstraintName] AS [ConstraintName], 
+    [SyncTables].[PrimaryKey] AS [PrimaryKey], 
+    [SyncTables].[Version] AS [Version]
+    FROM [dbo].[SyncTables] AS [SyncTables]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoCribCRM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountDB">
+          <Key>
+            <PropertyRef Name="AccountID" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountType" Type="Int16" Nullable="false" />
+          <Property Name="VendorID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FolderPath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SecureLevel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Licensed" Type="Int32" />
+          <Property Name="Active" Type="Int32" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CCNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CCType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CCExpMonth" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CCExpDay" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CCExpYear" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="NameOnCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillingZip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BillingCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordHintQuestion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordHint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+          <Property Name="LastChangeDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="UseAutoCribClient" Type="Boolean" />
+          <Property Name="SupportBeginDate" Type="DateTime" Precision="3" />
+          <Property Name="SupportEndDate" Type="DateTime" Precision="3" />
+          <Property Name="Subscription" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NumOfMachines" Type="Int32" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BeginDate" Type="DateTime" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Precision="3" />
+          <Property Name="Dashboard" Type="Boolean" Nullable="false" />
+          <Property Name="GroupId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IntelliviewPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IntelliviewAdmin" Type="Boolean" />
+          <Property Name="RestrictedAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ASPeLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+          <Property Name="EventID" Type="Int32" />
+          <Property Name="EventName" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="RunBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ThisRunDate" Type="DateTime" Precision="3" />
+          <Property Name="NextRunDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ASPevent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="ReportID" Type="Int32" />
+          <Property Name="MyGroup" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="EventDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isOn" Type="Int32" />
+          <Property Name="Freq" Type="Int32" />
+          <Property Name="Every" Type="Int32" />
+          <Property Name="NextRunOn" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteEvent" Type="Int32" />
+          <Property Name="NotifyAddr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NotifySubject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EXE" Type="Int32" />
+          <Property Name="ExeExitTime" Type="Int32" />
+          <Property Name="WebPageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sun" Type="Int32" />
+          <Property Name="Mon" Type="Int32" />
+          <Property Name="Tue" Type="Int32" />
+          <Property Name="Wed" Type="Int32" />
+          <Property Name="Thr" Type="Int32" />
+          <Property Name="Fri" Type="Int32" />
+          <Property Name="Sat" Type="Int32" />
+          <Property Name="LastRunStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SuccRuns" Type="Int32" />
+          <Property Name="FailedRuns" Type="Int32" />
+          <Property Name="TimeOffSet" Type="Int32" />
+          <Property Name="Daily" Type="Boolean" Nullable="false" />
+          <Property Name="Weekly" Type="Boolean" Nullable="false" />
+          <Property Name="Monthly" Type="Boolean" Nullable="false" />
+          <Property Name="SelectDay" Type="Boolean" Nullable="false" />
+          <Property Name="PrintTime" Type="DateTime" Precision="3" />
+          <Property Name="DayofWeek" Type="Int32" />
+          <Property Name="DayofMonth" Type="Int32" />
+          <Property Name="TimeZone" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="auditMyTran">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AuditType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyTranRecID" Type="Int32" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Emp" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BurnQty" Type="Int32" Nullable="false" />
+          <Property Name="CurOnHand" Type="Int32" Nullable="false" />
+          <Property Name="CurBurn" Type="Int32" Nullable="false" />
+          <Property Name="CurOnHand2" Type="Int32" Nullable="false" />
+          <Property Name="CurBurn2" Type="Int32" Nullable="false" />
+          <Property Name="AdjQty" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="auditOutbox">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AuditType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OutboxRecID" Type="Int32" />
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Key1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Key2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="ComputerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AutoPO">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="DbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POTime" Type="DateTime" Precision="3" />
+          <Property Name="GeneratePO" Type="Boolean" />
+          <Property Name="GenerateRoboPO" Type="Boolean" />
+          <Property Name="ExportPO" Type="Boolean" />
+          <Property Name="PoNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="POSent" Type="Boolean" />
+          <Property Name="EmailOn" Type="Boolean" />
+          <Property Name="Crib" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cXML" Type="Boolean" />
+          <Property Name="cXMLSent" Type="Boolean" />
+          <Property Name="cXMLCreated" Type="Boolean" />
+          <Property Name="EventID" Type="Int32" />
+          <Property Name="Run" Type="Boolean" />
+          <Property Name="Approval" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AutoPOEvent">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbId" Type="Int32" />
+          <Property Name="Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Run" Type="Boolean" />
+          <Property Name="Crib" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CribAccess">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="StationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CriticalBinEvent">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="PackQty" Type="Int32" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="ExtendedQty" Type="Int32" />
+          <Property Name="Vendor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DatabaseName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Processed" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriticalBin">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Data" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CurOnHandBurn">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="TranNo" Type="Int32" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CurOnHand" Type="Int32" />
+          <Property Name="CurOnHand2" Type="Int32" />
+          <Property Name="CurBurn" Type="Int32" />
+          <Property Name="CurBurn2" Type="Int32" />
+          <Property Name="DbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastRunTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Alpha2Code" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCodeA" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCodeN" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="MinorUnit" Type="Int32" />
+          <Property Name="CurrencyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountID" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MultiSearch" Type="Boolean" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Databas">
+          <Key>
+            <PropertyRef Name="DbID" />
+          </Key>
+          <Property Name="DbID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="AccountID" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DsnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DbSchema" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="DbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DbLogin" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DbPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AutoPO" Type="Boolean" />
+          <Property Name="Live" Type="Boolean" />
+          <Property Name="Notify" Type="Boolean" />
+          <Property Name="Monitor" Type="Boolean" />
+          <Property Name="NumOfCribs" Type="Int32" />
+          <Property Name="LastMonthNumOfCribs" Type="Int32" />
+          <Property Name="FirstTransaction" Type="DateTime" Precision="3" />
+          <Property Name="UseMasterItem" Type="Boolean" />
+          <Property Name="LocalDBType" Type="Boolean" />
+          <Property Name="LocalVersion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AllowDomainName" Type="Boolean" />
+          <Property Name="MultiSync" Type="Boolean" />
+          <Property Name="LCID" Type="Int32" />
+          <Property Name="AppName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AppVersion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OwnedBy" Type="Boolean" />
+          <Property Name="UseCustomPOReport" Type="Boolean" />
+          <Property Name="CustomerFolderPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ASPSyncStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AutoPollStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LastSyncTime" Type="DateTime" Precision="3" />
+          <Property Name="SalesOrderNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UseBackgroundImage" Type="Boolean" />
+          <Property Name="UseCustomedImages" Type="Boolean" />
+          <Property Name="HeaderTextColor" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="SearchHighlightColor" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentSize" Type="Single" />
+          <Property Name="MaximumSize" Type="Single" />
+          <Property Name="RemoteType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RemoteIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RemoteLogin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemotePassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RemotePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Setup_Company" Type="Boolean" />
+          <Property Name="Setup_Defaults" Type="Boolean" />
+          <Property Name="Setup_Connection" Type="Boolean" />
+          <Property Name="Setup_Locations" Type="Boolean" />
+          <Property Name="Setup_Controller" Type="Boolean" />
+          <Property Name="Setup_Terminals" Type="Boolean" />
+          <Property Name="Setup_Logins" Type="Boolean" />
+          <Property Name="Setup_Cribs" Type="Boolean" />
+          <Property Name="Setup_Bins" Type="Boolean" />
+          <Property Name="Setup_Inventory" Type="Boolean" />
+          <Property Name="Setup_Databases" Type="Boolean" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="NewSync" Type="Boolean" />
+          <Property Name="Webservice" Type="Boolean" Nullable="false" />
+          <Property Name="BackupOnly" Type="Boolean" Nullable="false" />
+          <Property Name="MX" Type="Boolean" Nullable="false" />
+          <Property Name="NumOfBins" Type="Int32" />
+          <Property Name="LastMonthNumOfBins" Type="Int32" />
+          <Property Name="WebserviceBeforeSuspend" Type="Boolean" Nullable="false" />
+          <Property Name="AccountType" Type="Int32" />
+          <Property Name="BillFrequency" Type="Int32" />
+          <Property Name="OutboxRecords" Type="Int32" Nullable="false" />
+          <Property Name="DoNotDelete" Type="Boolean" Nullable="false" />
+          <Property Name="SharedSecret" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DBOevent">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Run" Type="Boolean" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EquipmentNumber">
+          <Key>
+            <PropertyRef Name="ParentID" />
+            <PropertyRef Name="EquipmentNo" />
+          </Key>
+          <Property Name="Crib" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DbID" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="EquipmentNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="fldAuto" />
+          </Key>
+          <Property Name="fldAuto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fldUserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fldCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fldDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fldEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fldTimeIn" Type="DateTime" Precision="3" />
+          <Property Name="fldDate" Type="DateTime" Precision="3" />
+          <Property Name="IPAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="reportName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="companyId" Type="Int64" />
+          <Property Name="deletedDate" Type="DateTime" Precision="3" />
+          <Property Name="deletedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ReportAuth">
+          <Key>
+            <PropertyRef Name="token" />
+          </Key>
+          <Property Name="token" Type="Guid" Nullable="false" />
+          <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="accountID" Type="Int32" Nullable="false" />
+          <Property Name="ipAddress" Type="String" MaxLength="43" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportGroupAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accountID" Type="Int64" Nullable="false" />
+          <Property Name="groupID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Company" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PageURL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="TranType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ReportPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="permissionID" Type="Int32" Nullable="false" />
+          <Property Name="reportID" Type="Int64" Nullable="false" />
+          <Property Name="groupID" Type="Int64" />
+          <Property Name="accountID" Type="Int64" />
+          <Property Name="companyID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Server">
+          <Key>
+            <PropertyRef Name="AppName" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RemoteLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RemotePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="DbID" />
+            <PropertyRef Name="Station1" />
+          </Key>
+          <Property Name="DbID" Type="Int32" Nullable="false" />
+          <Property Name="Station1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="RoboType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KeyItemCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastIssue" Type="DateTime" Precision="3" />
+          <Property Name="NumofBins" Type="Int32" />
+          <Property Name="LockControl" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TempCriticalBin">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="PackQty" Type="Int32" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="ExtendedQty" Type="Int32" />
+          <Property Name="Vendor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DatabaseName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TempCriticalBin2">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="DbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DistributorID" Type="Int32" />
+          <Property Name="AppVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TempReport">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DbName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="AppVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyGroup" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MyDate" Type="Boolean" Nullable="false" />
+          <Property Name="DateField" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Range1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Field1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size1" Type="Int32" />
+          <Property Name="Range2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size2" Type="Int32" />
+          <Property Name="Batch" Type="Boolean" Nullable="false" />
+          <Property Name="Daily" Type="Boolean" Nullable="false" />
+          <Property Name="Weekly" Type="Boolean" Nullable="false" />
+          <Property Name="Monthly" Type="Boolean" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="StartRange1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EndRange1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StartRange2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EndRange2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ToPrint" Type="Boolean" Nullable="false" />
+          <Property Name="ToEmail" Type="Boolean" Nullable="false" />
+          <Property Name="ToFile" Type="Boolean" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AutoGenerateName" Type="Boolean" Nullable="false" />
+          <Property Name="FileType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ToFax" Type="Boolean" />
+          <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AStartDate" Type="DateTime" Precision="3" />
+          <Property Name="AEndDate" Type="DateTime" Precision="3" />
+          <Property Name="AStartRange1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AStartRange2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AEndRange1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AEndRange2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PrintTime" Type="DateTime" Precision="3" />
+          <Property Name="DayofWeek" Type="Int32" />
+          <Property Name="DayofMonth" Type="Int32" />
+          <Property Name="Autobin" Type="Boolean" />
+          <Property Name="DateRange" Type="Int32" Nullable="false" />
+          <Property Name="ADateRange" Type="Int32" Nullable="false" />
+          <Property Name="Processed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="Guid" />
+            <PropertyRef Name="GuidDate" />
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="Guid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GuidDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AutoPOTemp">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" />
+          <Property Name="DbID" Type="Int32" />
+          <Property Name="Crib" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyDate" Type="DateTime" Precision="3" />
+          <Property Name="MyTime" Type="DateTime" Precision="3" />
+          <Property Name="Run" Type="Boolean" />
+          <Property Name="DbName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MyDateP" Type="DateTime" Precision="3" />
+          <Property Name="MyTimeP" Type="DateTime" Precision="3" />
+          <Property Name="DbNameP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CribP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="POTime" Type="DateTime" Precision="3" />
+          <Property Name="GeneratePO" Type="Boolean" />
+          <Property Name="GenerateRoboPO" Type="Boolean" />
+          <Property Name="ExportPO" Type="Boolean" />
+          <Property Name="PoNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="POSent" Type="Boolean" />
+          <Property Name="EmailOn" Type="Boolean" />
+          <Property Name="cXML" Type="Boolean" />
+          <Property Name="CXMLSent" Type="Boolean" />
+          <Property Name="cXMLCreated" Type="Boolean" />
+          <Property Name="EventID" Type="Int32" />
+          <Property Name="RunP" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ReportGroup">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="companyID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportPermissionType">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="permission" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="permission" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SyncTable">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="PrimaryKey" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConstraintName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryKey" Type="Boolean" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AutoCribCrmConncetion" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountDBs" EntityType="Self.AccountDB" />
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="ASPeLogs" EntityType="Self.ASPeLog" />
+          <EntitySet Name="ASPevents" EntityType="Self.ASPevent" />
+          <EntitySet Name="auditMyTrans" EntityType="Self.auditMyTran" />
+          <EntitySet Name="auditOutboxes" EntityType="Self.auditOutbox" />
+          <EntitySet Name="AutoPOes" EntityType="Self.AutoPO" />
+          <EntitySet Name="AutoPOEvents" EntityType="Self.AutoPOEvent" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="CribAccesses" EntityType="Self.CribAccess" />
+          <EntitySet Name="CriticalBinEvents" EntityType="Self.CriticalBinEvent" />
+          <EntitySet Name="CriticalBins" EntityType="Self.CriticalBin" />
+          <EntitySet Name="CurOnHandBurns" EntityType="Self.CurOnHandBurn" />
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Databases" EntityType="Self.Databas" />
+          <EntitySet Name="DBOevents" EntityType="Self.DBOevent" />
+          <EntitySet Name="EquipmentNumbers" EntityType="Self.EquipmentNumber" />
+          <EntitySet Name="Logs" EntityType="Self.Log" />
+          <EntitySet Name="Reports" EntityType="Self.Report" />
+          <EntitySet Name="ReportAuths" EntityType="Self.ReportAuth" />
+          <EntitySet Name="ReportGroupAccounts" EntityType="Self.ReportGroupAccount" />
+          <EntitySet Name="ReportLogs" EntityType="Self.ReportLog" />
+          <EntitySet Name="ReportPermissions" EntityType="Self.ReportPermission" />
+          <EntitySet Name="Servers" EntityType="Self.Server" />
+          <EntitySet Name="Stations" EntityType="Self.Station" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TempCriticalBins" EntityType="Self.TempCriticalBin" />
+          <EntitySet Name="TempCriticalBin2" EntityType="Self.TempCriticalBin2" />
+          <EntitySet Name="TempReports" EntityType="Self.TempReport" />
+          <EntitySet Name="Auths" EntityType="Self.Auth" />
+          <EntitySet Name="AutoPOTemps" EntityType="Self.AutoPOTemp" />
+          <EntitySet Name="ReportGroups" EntityType="Self.ReportGroup" />
+          <EntitySet Name="ReportPermissionTypes" EntityType="Self.ReportPermissionType" />
+          <EntitySet Name="SyncTables" EntityType="Self.SyncTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoCribCRMStoreContainer" CdmEntityContainer="AutoCribCrmConncetion">
+          <EntitySetMapping Name="AccountDBs">
+            <EntityTypeMapping TypeName="AutoCribCRM.AccountDB">
+              <MappingFragment StoreEntitySet="AccountDBs">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="AutoCribCRM.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="HostedBy" ColumnName="HostedBy" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+                <ScalarProperty Name="FolderPath" ColumnName="FolderPath" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="SecureLevel" ColumnName="SecureLevel" />
+                <ScalarProperty Name="Licensed" ColumnName="Licensed" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="WebsiteURL" ColumnName="WebsiteURL" />
+                <ScalarProperty Name="CCNumber" ColumnName="CCNumber" />
+                <ScalarProperty Name="CCType" ColumnName="CCType" />
+                <ScalarProperty Name="CCExpMonth" ColumnName="CCExpMonth" />
+                <ScalarProperty Name="CCExpDay" ColumnName="CCExpDay" />
+                <ScalarProperty Name="CCExpYear" ColumnName="CCExpYear" />
+                <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
+                <ScalarProperty Name="BillingZip" ColumnName="BillingZip" />
+                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
+                <ScalarProperty Name="PasswordHintQuestion" ColumnName="PasswordHintQuestion" />
+                <ScalarProperty Name="PasswordHint" ColumnName="PasswordHint" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="UseAutoCribClient" ColumnName="UseAutoCribClient" />
+                <ScalarProperty Name="SupportBeginDate" ColumnName="SupportBeginDate" />
+                <ScalarProperty Name="SupportEndDate" ColumnName="SupportEndDate" />
+                <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NumOfMachines" ColumnName="NumOfMachines" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="Dashboard" ColumnName="Dashboard" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="IntelliviewPassword" ColumnName="IntelliviewPassword" />
+                <ScalarProperty Name="IntelliviewAdmin" ColumnName="IntelliviewAdmin" />
+                <ScalarProperty Name="RestrictedAdmin" ColumnName="RestrictedAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ASPeLogs">
+            <EntityTypeMapping TypeName="AutoCribCRM.ASPeLog">
+              <MappingFragment StoreEntitySet="ASPeLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="RunBy" ColumnName="RunBy" />
+                <ScalarProperty Name="ThisRunDate" ColumnName="ThisRunDate" />
+                <ScalarProperty Name="NextRunDate" ColumnName="NextRunDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StatusInfo" ColumnName="StatusInfo" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ASPevents">
+            <EntityTypeMapping TypeName="AutoCribCRM.ASPevent">
+              <MappingFragment StoreEntitySet="ASPevents">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="MyGroup" ColumnName="MyGroup" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EventDesc" ColumnName="EventDesc" />
+                <ScalarProperty Name="isOn" ColumnName="isOn" />
+                <ScalarProperty Name="Freq" ColumnName="Freq" />
+                <ScalarProperty Name="Every" ColumnName="Every" />
+                <ScalarProperty Name="NextRunOn" ColumnName="NextRunOn" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="DeleteEvent" ColumnName="DeleteEvent" />
+                <ScalarProperty Name="NotifyAddr" ColumnName="NotifyAddr" />
+                <ScalarProperty Name="NotifySubject" ColumnName="NotifySubject" />
+                <ScalarProperty Name="EXE" ColumnName="EXE" />
+                <ScalarProperty Name="ExeExitTime" ColumnName="ExeExitTime" />
+                <ScalarProperty Name="WebPageURL" ColumnName="WebPageURL" />
+                <ScalarProperty Name="Sun" ColumnName="Sun" />
+                <ScalarProperty Name="Mon" ColumnName="Mon" />
+                <ScalarProperty Name="Tue" ColumnName="Tue" />
+                <ScalarProperty Name="Wed" ColumnName="Wed" />
+                <ScalarProperty Name="Thr" ColumnName="Thr" />
+                <ScalarProperty Name="Fri" ColumnName="Fri" />
+                <ScalarProperty Name="Sat" ColumnName="Sat" />
+                <ScalarProperty Name="LastRunStatus" ColumnName="LastRunStatus" />
+                <ScalarProperty Name="SuccRuns" ColumnName="SuccRuns" />
+                <ScalarProperty Name="FailedRuns" ColumnName="FailedRuns" />
+                <ScalarProperty Name="TimeOffSet" ColumnName="TimeOffSet" />
+                <ScalarProperty Name="Daily" ColumnName="Daily" />
+                <ScalarProperty Name="Weekly" ColumnName="Weekly" />
+                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+                <ScalarProperty Name="SelectDay" ColumnName="SelectDay" />
+                <ScalarProperty Name="PrintTime" ColumnName="PrintTime" />
+                <ScalarProperty Name="DayofWeek" ColumnName="DayofWeek" />
+                <ScalarProperty Name="DayofMonth" ColumnName="DayofMonth" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="auditMyTrans">
+            <EntityTypeMapping TypeName="AutoCribCRM.auditMyTran">
+              <MappingFragment StoreEntitySet="auditMyTran">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="AuditType" ColumnName="AuditType" />
+                <ScalarProperty Name="MyTranRecID" ColumnName="MyTranRecID" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Bin" ColumnName="Bin" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Emp" ColumnName="Emp" />
+                <ScalarProperty Name="BurnQty" ColumnName="BurnQty" />
+                <ScalarProperty Name="CurOnHand" ColumnName="CurOnHand" />
+                <ScalarProperty Name="CurBurn" ColumnName="CurBurn" />
+                <ScalarProperty Name="CurOnHand2" ColumnName="CurOnHand2" />
+                <ScalarProperty Name="CurBurn2" ColumnName="CurBurn2" />
+                <ScalarProperty Name="AdjQty" ColumnName="AdjQty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="auditOutboxes">
+            <EntityTypeMapping TypeName="AutoCribCRM.auditOutbox">
+              <MappingFragment StoreEntitySet="auditOutbox">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="AuditType" ColumnName="AuditType" />
+                <ScalarProperty Name="OutboxRecID" ColumnName="OutboxRecID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Key1" ColumnName="Key1" />
+                <ScalarProperty Name="Key2" ColumnName="Key2" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutoPOes">
+            <EntityTypeMapping TypeName="AutoCribCRM.AutoPO">
+              <MappingFragment StoreEntitySet="AutoPO">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="POTime" ColumnName="POTime" />
+                <ScalarProperty Name="GeneratePO" ColumnName="GeneratePO" />
+                <ScalarProperty Name="GenerateRoboPO" ColumnName="GenerateRoboPO" />
+                <ScalarProperty Name="ExportPO" ColumnName="ExportPO" />
+                <ScalarProperty Name="PoNo" ColumnName="PoNo" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="POSent" ColumnName="POSent" />
+                <ScalarProperty Name="EmailOn" ColumnName="EmailOn" />
+                <ScalarProperty Name="Crib" ColumnName="Crib" />
+                <ScalarProperty Name="cXML" ColumnName="cXML" />
+                <ScalarProperty Name="cXMLSent" ColumnName="cXMLSent" />
+                <ScalarProperty Name="cXMLCreated" ColumnName="cXMLCreated" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="Run" ColumnName="Run" />
+                <ScalarProperty Name="Approval" ColumnName="Approval" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutoPOEvents">
+            <EntityTypeMapping TypeName="AutoCribCRM.AutoPOEvent">
+              <MappingFragment StoreEntitySet="AutoPOEvents">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbId" ColumnName="DbId" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Run" ColumnName="Run" />
+                <ScalarProperty Name="Crib" ColumnName="Crib" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="AutoCribCRM.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CribAccesses">
+            <EntityTypeMapping TypeName="AutoCribCRM.CribAccess">
+              <MappingFragment StoreEntitySet="CribAccess">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="StationID" ColumnName="StationID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CriticalBinEvents">
+            <EntityTypeMapping TypeName="AutoCribCRM.CriticalBinEvent">
+              <MappingFragment StoreEntitySet="CriticalBinEvents">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="MyNo" ColumnName="MyNo" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="PackQty" ColumnName="PackQty" />
+                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                <ScalarProperty Name="ExtendedQty" ColumnName="ExtendedQty" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Processed" ColumnName="Processed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CriticalBins">
+            <EntityTypeMapping TypeName="AutoCribCRM.CriticalBin">
+              <MappingFragment StoreEntitySet="CriticalBins">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurOnHandBurns">
+            <EntityTypeMapping TypeName="AutoCribCRM.CurOnHandBurn">
+              <MappingFragment StoreEntitySet="CurOnHandBurn">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TranNo" ColumnName="TranNo" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Bin" ColumnName="Bin" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Emp" ColumnName="Emp" />
+                <ScalarProperty Name="CurOnHand" ColumnName="CurOnHand" />
+                <ScalarProperty Name="CurOnHand2" ColumnName="CurOnHand2" />
+                <ScalarProperty Name="CurBurn" ColumnName="CurBurn" />
+                <ScalarProperty Name="CurBurn2" ColumnName="CurBurn2" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="LastRunTime" ColumnName="LastRunTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="AutoCribCRM.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Alpha2Code" ColumnName="Alpha2Code" />
+                <ScalarProperty Name="CurrencyCodeA" ColumnName="CurrencyCodeA" />
+                <ScalarProperty Name="CurrencyCodeN" ColumnName="CurrencyCodeN" />
+                <ScalarProperty Name="MinorUnit" ColumnName="MinorUnit" />
+                <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="AutoCribCRM.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="MultiSearch" ColumnName="MultiSearch" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Databases">
+            <EntityTypeMapping TypeName="AutoCribCRM.Databas">
+              <MappingFragment StoreEntitySet="Databases">
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="DsnName" ColumnName="DsnName" />
+                <ScalarProperty Name="DbSchema" ColumnName="DbSchema" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="DbLogin" ColumnName="DbLogin" />
+                <ScalarProperty Name="DbPassword" ColumnName="DbPassword" />
+                <ScalarProperty Name="AutoPO" ColumnName="AutoPO" />
+                <ScalarProperty Name="Live" ColumnName="Live" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="Monitor" ColumnName="Monitor" />
+                <ScalarProperty Name="NumOfCribs" ColumnName="NumOfCribs" />
+                <ScalarProperty Name="LastMonthNumOfCribs" ColumnName="LastMonthNumOfCribs" />
+                <ScalarProperty Name="FirstTransaction" ColumnName="FirstTransaction" />
+                <ScalarProperty Name="UseMasterItem" ColumnName="UseMasterItem" />
+                <ScalarProperty Name="LocalDBType" ColumnName="LocalDBType" />
+                <ScalarProperty Name="LocalVersion" ColumnName="LocalVersion" />
+                <ScalarProperty Name="AllowDomainName" ColumnName="AllowDomainName" />
+                <ScalarProperty Name="MultiSync" ColumnName="MultiSync" />
+                <ScalarProperty Name="LCID" ColumnName="LCID" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="OwnedBy" ColumnName="OwnedBy" />
+                <ScalarProperty Name="UseCustomPOReport" ColumnName="UseCustomPOReport" />
+                <ScalarProperty Name="CustomerFolderPath" ColumnName="CustomerFolderPath" />
+                <ScalarProperty Name="ASPSyncStatus" ColumnName="ASPSyncStatus" />
+                <ScalarProperty Name="AutoPollStatus" ColumnName="AutoPollStatus" />
+                <ScalarProperty Name="LastSyncTime" ColumnName="LastSyncTime" />
+                <ScalarProperty Name="SalesOrderNumber" ColumnName="SalesOrderNumber" />
+                <ScalarProperty Name="UseBackgroundImage" ColumnName="UseBackgroundImage" />
+                <ScalarProperty Name="UseCustomedImages" ColumnName="UseCustomedImages" />
+                <ScalarProperty Name="HeaderTextColor" ColumnName="HeaderTextColor" />
+                <ScalarProperty Name="SearchHighlightColor" ColumnName="SearchHighlightColor" />
+                <ScalarProperty Name="CurrentSize" ColumnName="CurrentSize" />
+                <ScalarProperty Name="MaximumSize" ColumnName="MaximumSize" />
+                <ScalarProperty Name="RemoteType" ColumnName="RemoteType" />
+                <ScalarProperty Name="RemoteIP" ColumnName="RemoteIP" />
+                <ScalarProperty Name="RemoteLogin" ColumnName="RemoteLogin" />
+                <ScalarProperty Name="RemotePassword" ColumnName="RemotePassword" />
+                <ScalarProperty Name="RemotePath" ColumnName="RemotePath" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Setup_Company" ColumnName="Setup_Company" />
+                <ScalarProperty Name="Setup_Defaults" ColumnName="Setup_Defaults" />
+                <ScalarProperty Name="Setup_Connection" ColumnName="Setup_Connection" />
+                <ScalarProperty Name="Setup_Locations" ColumnName="Setup_Locations" />
+                <ScalarProperty Name="Setup_Controller" ColumnName="Setup_Controller" />
+                <ScalarProperty Name="Setup_Terminals" ColumnName="Setup_Terminals" />
+                <ScalarProperty Name="Setup_Logins" ColumnName="Setup_Logins" />
+                <ScalarProperty Name="Setup_Cribs" ColumnName="Setup_Cribs" />
+                <ScalarProperty Name="Setup_Bins" ColumnName="Setup_Bins" />
+                <ScalarProperty Name="Setup_Inventory" ColumnName="Setup_Inventory" />
+                <ScalarProperty Name="Setup_Databases" ColumnName="Setup_Databases" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="NewSync" ColumnName="NewSync" />
+                <ScalarProperty Name="Webservice" ColumnName="Webservice" />
+                <ScalarProperty Name="BackupOnly" ColumnName="BackupOnly" />
+                <ScalarProperty Name="MX" ColumnName="MX" />
+                <ScalarProperty Name="NumOfBins" ColumnName="NumOfBins" />
+                <ScalarProperty Name="LastMonthNumOfBins" ColumnName="LastMonthNumOfBins" />
+                <ScalarProperty Name="WebserviceBeforeSuspend" ColumnName="WebserviceBeforeSuspend" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="BillFrequency" ColumnName="BillFrequency" />
+                <ScalarProperty Name="OutboxRecords" ColumnName="OutboxRecords" />
+                <ScalarProperty Name="DoNotDelete" ColumnName="DoNotDelete" />
+                <ScalarProperty Name="SharedSecret" ColumnName="SharedSecret" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBOevents">
+            <EntityTypeMapping TypeName="AutoCribCRM.DBOevent">
+              <MappingFragment StoreEntitySet="DBOevents">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Run" ColumnName="Run" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentNumbers">
+            <EntityTypeMapping TypeName="AutoCribCRM.EquipmentNumber">
+              <MappingFragment StoreEntitySet="EquipmentNumbers">
+                <ScalarProperty Name="Crib" ColumnName="Crib" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="EquipmentNo" ColumnName="EquipmentNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="AutoCribCRM.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="fldAuto" ColumnName="fldAuto" />
+                <ScalarProperty Name="fldUserID" ColumnName="fldUserID" />
+                <ScalarProperty Name="fldCompany" ColumnName="fldCompany" />
+                <ScalarProperty Name="fldDescription" ColumnName="fldDescription" />
+                <ScalarProperty Name="fldEmail" ColumnName="fldEmail" />
+                <ScalarProperty Name="fldTimeIn" ColumnName="fldTimeIn" />
+                <ScalarProperty Name="fldDate" ColumnName="fldDate" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="AutoCribCRM.Report">
+              <MappingFragment StoreEntitySet="Report">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="reportName" ColumnName="reportName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="companyId" ColumnName="companyId" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportAuths">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportAuth">
+              <MappingFragment StoreEntitySet="ReportAuth">
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="ipAddress" ColumnName="ipAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportGroupAccounts">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportGroupAccount">
+              <MappingFragment StoreEntitySet="ReportGroupAccount">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="groupID" ColumnName="groupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportLogs">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportLog">
+              <MappingFragment StoreEntitySet="ReportLog">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="PageURL" ColumnName="PageURL" />
+                <ScalarProperty Name="TranType" ColumnName="TranType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportPermissions">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportPermission">
+              <MappingFragment StoreEntitySet="ReportPermission">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="permissionID" ColumnName="permissionID" />
+                <ScalarProperty Name="reportID" ColumnName="reportID" />
+                <ScalarProperty Name="groupID" ColumnName="groupID" />
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servers">
+            <EntityTypeMapping TypeName="AutoCribCRM.Server">
+              <MappingFragment StoreEntitySet="Servers">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="RemoteLogin" ColumnName="RemoteLogin" />
+                <ScalarProperty Name="RemotePassword" ColumnName="RemotePassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stations">
+            <EntityTypeMapping TypeName="AutoCribCRM.Station">
+              <MappingFragment StoreEntitySet="Station">
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="Station1" ColumnName="Station" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="RoboType" ColumnName="RoboType" />
+                <ScalarProperty Name="KeyItemCode" ColumnName="KeyItemCode" />
+                <ScalarProperty Name="LastIssue" ColumnName="LastIssue" />
+                <ScalarProperty Name="NumofBins" ColumnName="NumofBins" />
+                <ScalarProperty Name="LockControl" ColumnName="LockControl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AutoCribCRM.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempCriticalBins">
+            <EntityTypeMapping TypeName="AutoCribCRM.TempCriticalBin">
+              <MappingFragment StoreEntitySet="TempCriticalBin">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="MyNo" ColumnName="MyNo" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="PackQty" ColumnName="PackQty" />
+                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                <ScalarProperty Name="ExtendedQty" ColumnName="ExtendedQty" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempCriticalBin2">
+            <EntityTypeMapping TypeName="AutoCribCRM.TempCriticalBin2">
+              <MappingFragment StoreEntitySet="TempCriticalBin2">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="MyDateTime" ColumnName="MyDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempReports">
+            <EntityTypeMapping TypeName="AutoCribCRM.TempReport">
+              <MappingFragment StoreEntitySet="TempReport">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="MyGroup" ColumnName="MyGroup" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="DateField" ColumnName="DateField" />
+                <ScalarProperty Name="Range1" ColumnName="Range1" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="Size1" ColumnName="Size1" />
+                <ScalarProperty Name="Range2" ColumnName="Range2" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Size2" ColumnName="Size2" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Daily" ColumnName="Daily" />
+                <ScalarProperty Name="Weekly" ColumnName="Weekly" />
+                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartRange1" ColumnName="StartRange1" />
+                <ScalarProperty Name="EndRange1" ColumnName="EndRange1" />
+                <ScalarProperty Name="StartRange2" ColumnName="StartRange2" />
+                <ScalarProperty Name="EndRange2" ColumnName="EndRange2" />
+                <ScalarProperty Name="ToPrint" ColumnName="ToPrint" />
+                <ScalarProperty Name="ToEmail" ColumnName="ToEmail" />
+                <ScalarProperty Name="ToFile" ColumnName="ToFile" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="AutoGenerateName" ColumnName="AutoGenerateName" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="ToFax" ColumnName="ToFax" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="AStartDate" ColumnName="AStartDate" />
+                <ScalarProperty Name="AEndDate" ColumnName="AEndDate" />
+                <ScalarProperty Name="AStartRange1" ColumnName="AStartRange1" />
+                <ScalarProperty Name="AStartRange2" ColumnName="AStartRange2" />
+                <ScalarProperty Name="AEndRange1" ColumnName="AEndRange1" />
+                <ScalarProperty Name="AEndRange2" ColumnName="AEndRange2" />
+                <ScalarProperty Name="PrintTime" ColumnName="PrintTime" />
+                <ScalarProperty Name="DayofWeek" ColumnName="DayofWeek" />
+                <ScalarProperty Name="DayofMonth" ColumnName="DayofMonth" />
+                <ScalarProperty Name="Autobin" ColumnName="Autobin" />
+                <ScalarProperty Name="DateRange" ColumnName="DateRange" />
+                <ScalarProperty Name="ADateRange" ColumnName="ADateRange" />
+                <ScalarProperty Name="Processed" ColumnName="Processed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auths">
+            <EntityTypeMapping TypeName="AutoCribCRM.Auth">
+              <MappingFragment StoreEntitySet="Auth">
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="GuidDate" ColumnName="GuidDate" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutoPOTemps">
+            <EntityTypeMapping TypeName="AutoCribCRM.AutoPOTemp">
+              <MappingFragment StoreEntitySet="AutoPOTemp">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="DbID" ColumnName="DbID" />
+                <ScalarProperty Name="Crib" ColumnName="Crib" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="MyDate" ColumnName="MyDate" />
+                <ScalarProperty Name="MyTime" ColumnName="MyTime" />
+                <ScalarProperty Name="Run" ColumnName="Run" />
+                <ScalarProperty Name="DbName" ColumnName="DbName" />
+                <ScalarProperty Name="MyDateP" ColumnName="MyDateP" />
+                <ScalarProperty Name="MyTimeP" ColumnName="MyTimeP" />
+                <ScalarProperty Name="DbNameP" ColumnName="DbNameP" />
+                <ScalarProperty Name="CribP" ColumnName="CribP" />
+                <ScalarProperty Name="VendorP" ColumnName="VendorP" />
+                <ScalarProperty Name="POTime" ColumnName="POTime" />
+                <ScalarProperty Name="GeneratePO" ColumnName="GeneratePO" />
+                <ScalarProperty Name="GenerateRoboPO" ColumnName="GenerateRoboPO" />
+                <ScalarProperty Name="ExportPO" ColumnName="ExportPO" />
+                <ScalarProperty Name="PoNo" ColumnName="PoNo" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="POSent" ColumnName="POSent" />
+                <ScalarProperty Name="EmailOn" ColumnName="EmailOn" />
+                <ScalarProperty Name="cXML" ColumnName="cXML" />
+                <ScalarProperty Name="CXMLSent" ColumnName="CXMLSent" />
+                <ScalarProperty Name="cXMLCreated" ColumnName="cXMLCreated" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="RunP" ColumnName="RunP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportGroups">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportGroup">
+              <MappingFragment StoreEntitySet="ReportGroup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportPermissionTypes">
+            <EntityTypeMapping TypeName="AutoCribCRM.ReportPermissionType">
+              <MappingFragment StoreEntitySet="ReportPermissionType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="permission" ColumnName="permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SyncTables">
+            <EntityTypeMapping TypeName="AutoCribCRM.SyncTable">
+              <MappingFragment StoreEntitySet="SyncTables">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="DataType" ColumnName="DataType" />
+                <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+                <ScalarProperty Name="ConstraintName" ColumnName="ConstraintName" />
+                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
