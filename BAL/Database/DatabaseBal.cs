@@ -8,7 +8,7 @@ namespace BAL.Database
 {
     public class DatabaseBal : IDatabaseBAL
     {
-        public IList<CrmDomain.Databas> GetAllDatabase()
+        public IList<CrmDomain.Databas> GetAllDatabase() 
         {
             
         }
